@@ -1,16 +1,32 @@
 package core.city;
 
+import core.apartment.ApartmentImpl;
+
+/**
+ * Класс City
+ */
 public class City {
     private final String name;
     private final String country;
     private final int population;
 
-    public City(String name, String country, int population){
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     *
+     * @param name       - name
+     * @param country    - country
+     * @param population - population
+     * @see City (String, String, int)
+     */
+    public City(String name, String country, int population) {
         this.name = name;
         this.country = country;
         this.population = population;
     }
 
+    /**
+     * геттеры для работы с полями класса ApartmentImpl
+     */
     public String getName() {
         return name;
     }
@@ -23,8 +39,12 @@ public class City {
         return population;
     }
 
-    public String toString(){
-        if (population < 1000000){
+    /**
+     * Переопределение функции toString базового класса Object
+     */
+
+    public String toString() {
+        if (population < 1000000) {
             return "default city";
         } else {
             return "normally city";

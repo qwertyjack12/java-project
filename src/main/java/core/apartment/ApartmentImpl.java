@@ -5,6 +5,9 @@ import core.room.Room;
 
 import java.util.ArrayList;
 
+/**
+ * Класс ApartamentImpl, реализующий интерфейс Apartment
+ */
 public class ApartmentImpl implements Apartment {
 
     private final ArrayList<Room> roomList;
@@ -12,30 +15,49 @@ public class ApartmentImpl implements Apartment {
     private final int price;
     private final String description;
 
-    public ApartmentImpl(int price, String description, City city){
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     *
+     * @param city        - city
+     * @param description - description
+     * @param price       - price
+     * @see ApartmentImpl(int, String, String)
+     */
+
+    public ApartmentImpl(int price, String description, City city) {
         this.price = price;
         this.description = description;
         this.city = city;
         this.roomList = new ArrayList<Room>();
     }
 
+    /**
+     * Переопределение функции addRoom Apartment
+     */
     @Override
     public void addRoom(Room room) {
         roomList.add(room);
     }
 
+    /**
+     * Переопределение функции removeRoom Apartment
+     */
     @Override
     public void removeRoom(Room room) {
         roomList.remove(room);
     }
 
-    @Override
-    public String toString(){
+    /**
+     * Переопределение функции toString базового класса Object
+     */
+    public String toString() {
         return description +
                 '\n' +
                 city.toString();
     }
-
+    /**
+     * геттеры для работы с полями класса ApartmentImpl
+     */
     public String getDescription() {
         return description;
     }
