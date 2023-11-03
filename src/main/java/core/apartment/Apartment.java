@@ -16,4 +16,6 @@ public interface Apartment {
      * Функция удаления Room
      */
     void removeRoom(Room room);
+    double calculateArea();
+
 }

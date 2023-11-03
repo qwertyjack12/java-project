@@ -33,7 +33,10 @@ public class Main {
         System.out.println(apartment.getRoomList());
 
         apartment.addRoom(room);
+        apartment.addRoom(room);
 
         System.out.println(apartment.getRoomList());
+
+        System.out.println(apartment.toString());
     }
 }

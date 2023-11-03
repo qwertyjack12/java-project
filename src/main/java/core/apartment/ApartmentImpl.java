@@ -47,11 +47,22 @@ public class ApartmentImpl implements Apartment {
         roomList.remove(room);
     }
 
+    @Override
+    public double calculateArea() {
+        double total = 0;
+        for (var room: roomList) {
+            total += room.calculateArea();
+        }
+        return total;
+    }
+
     /**
      * Переопределение функции toString базового класса Object
      */
     public String toString() {
         return description +
+                '\n' +
+                this.calculateArea() +
                 '\n' +
                 city.toString();
     }
