@@ -2,10 +2,12 @@ package core.city;
 
 import core.apartment.ApartmentImpl;
 
+import java.io.Serializable;
+
 /**
  * Класс City
  */
-public class City {
+public class City implements Serializable {
     private final String name;
     private final String country;
     private final int population;
@@ -45,9 +47,9 @@ public class City {
 
     public String toString() {
         if (population < 1000000) {
-            return "default city";
+            return name + ". Default city";
         } else {
-            return "normally city";
+            return name + ". Normally city";
         }
     }
 }

@@ -3,12 +3,13 @@ package core.apartment;
 import core.city.City;
 import core.room.Room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Класс ApartamentImpl, реализующий интерфейс Apartment
  */
-public class ApartmentImpl implements Apartment {
+public class ApartmentImpl implements Apartment, Serializable {
 
     private final ArrayList<Room> roomList;
     private final City city;

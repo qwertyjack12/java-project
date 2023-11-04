@@ -1,9 +1,11 @@
 package core.room;
 
+import java.io.Serializable;
+
 /**
  * Класс RoomImpl, реализующий интерфейс Room
  */
-public class RoomImpl implements Room {
+public class RoomImpl implements Room, Serializable {
     private final String name;
     private final double height;
     private final double width;
@@ -51,11 +53,11 @@ public class RoomImpl implements Room {
     public String toString() {
         var area = this.calculateArea();
         if (area < 70) {
-            return "bad room";
+            return name + ". Bad room";
         } else if ((area > 70) | (area < 100)) {
-            return "not bad room";
+            return name + ". Not bad room";
         } else {
-            return "excellent room";
+            return name + ". Excellent room";
         }
     }
 }
